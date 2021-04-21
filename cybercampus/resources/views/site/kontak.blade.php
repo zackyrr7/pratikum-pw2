@@ -7,6 +7,7 @@
     <title>kontak</title>
 </head>
 <body>
+
     <h1>Kontak kami</h1>
     <form>
   <label for="nama">Nama :</label>

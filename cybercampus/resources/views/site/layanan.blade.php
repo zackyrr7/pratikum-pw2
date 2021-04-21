@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>kontak</title>
+    <title>Halo semua</title> 
 </head>
 <body>
-    <h1>Kontak kami</h1>
-    <form>
-  <label for="nama">Nama :</label>
-  <input type="text" id="nama" name="nama"><br> <br>
-  <label for="email">Email:</label>
-  <input type="text" id="email" name="email"><br> <br>
-  <label for="Tanggapan">Tanggapan:</label> <br>
-  <textarea input width = 300px type="text"  id="Tanggapan" name="Tanggapan"> </textarea><br> <br>
-  <input type = "button" name = "kirim" value = "kirim">
-  
-</form>
+
+    <h1>Layanan</h1>
+    <p>Layanan Program studi Sistem Informasi meliputi : </p>
+    <ol>
+       @foreach ($list_layanan as $ls)
+       <li>{{ $ls }}</li>
+       @endforeach
+    </ol>
+
+    
+
 </body>
 </html>
