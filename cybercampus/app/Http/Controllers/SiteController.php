@@ -10,7 +10,7 @@ class SiteController extends Controller
 {
     public function beranda()
     {
-        return view('beranda');
+        return view('site.beranda');
     }
 
     public function tentang()
@@ -59,6 +59,20 @@ class SiteController extends Controller
     public function listDosen($tahun)
     {
         echo "Ini adalah halaman List dosen". $tahun;
+    }
+
+    public function cobaForm()
+    {
+        return view('site.coba_form');
+    }
+    public function prosesForm(Request $request)
+    {
+        
+        $nama = $request->nama;
+        //disini ada proses masukkan nama ke database
+
+        //setelah diproses dilempar ke halaman lain
+        return redirect()->route('kontak');
     }
 }
  ?>

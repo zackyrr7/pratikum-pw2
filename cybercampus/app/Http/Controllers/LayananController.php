@@ -9,6 +9,7 @@ class LayananController extends Controller
 {
     public function index()
     {
+
         $layanan = Layanan::all();
         return view('layanan.index', compact('layanan'));
     }
@@ -19,27 +20,40 @@ class LayananController extends Controller
         return view('layanan.detail',compact('layanan'));
     }
 
-    public function tambah()
+    public function formTambah()
     {
-        echo "Fungsi Tambah";
-        $layanan = new Layanan();
-        $layanan->nama_layanan = 'Antar jemput anak sekolah';
-        $layanan->deskripsi_layanan = 'Mengantar dan menjemput anak sekolahan yang ada';
-        $layanan->save();
+        return view('layanan.form_tambah');
     }
 
-    public function ubah($id)
+    public function tambah(Request $request)
+    {
+        
+        $layanan = new Layanan();
+        $layanan->nama_layanan = $request->nama_layanan;
+        $layanan->deskripsi_layanan = $request->deskripsi_layanan;
+        $layanan->save();
+        return redirect()->route('layanan.index');
+    }
+
+    public function formUbah($id)
     {
         $layanan = Layanan::find($id);
-        $layanan->nama_layanan = 'penelitian dan pengembangan';
+        return view('layanan.formubah',compact('layanan'));
+    }
+
+    public function ubah(Request $request,$id)
+    {
+        $layanan = Layanan::find($id);
+        $layanan->nama_layanan = $request->nama_layanan;
+        $layanan->deskripsi_layanan= $request->deskripsi_layanan;
         $layanan->save();
-        echo "sudah diubah";
+        return redirect()->route('layanan.detail',['id'=>$layanan->id]);
     }
 
     public function hapus($id)
     {
         $layanan = Layanan::find($id);
         $layanan->delete();
-        echo 'Sudah terhapus';
+        return redirect()->route('layanan.index');
     }
 }

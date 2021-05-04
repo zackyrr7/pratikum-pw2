@@ -7,7 +7,7 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home
+            <a class="nav-link" href="{{route('beranda')}}">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
@@ -15,7 +15,7 @@
             <a class="nav-link" href="#">Tentang Kami</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Layanan</a>
+            <a class="nav-link" href="{{ route('layanan.index')}}">Layanan</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Kontak</a>
