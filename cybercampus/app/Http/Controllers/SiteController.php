@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Dataku;
 use DB;
+use Illuminate\Support\Facades\Auth;
 
 class SiteController extends Controller
 {
@@ -18,10 +19,10 @@ class SiteController extends Controller
         $nama_prodi = 'sistem informasi';
         $universitas = 'Universitas Tanjungpura';
         $kajur = 'Ilhamsyah';
+        $id_user = Auth::id();
+        $current_user = Auth::user();
 
-        return view('site.tentang',['nama_prodi' => $nama_prodi,
-        'universitas'=>$universitas,
-        'kajur'=>$kajur] );
+        return view('site.tentang',compact('nama_prodi','universitas','kajur','id_user','current_user') );
     }
 
     public function kontak()

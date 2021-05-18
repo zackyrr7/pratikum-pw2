@@ -43,7 +43,7 @@
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-                @include('layouts.backend.partial.content')
+                @yield('content')
 
             <!-- End of Main Content -->
 

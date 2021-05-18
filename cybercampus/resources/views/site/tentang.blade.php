@@ -1,10 +1,14 @@
 @extends('layouts.frontend.main')
 
 @section('content')
+
     
 
     
     <h1 class = "mt-4">Nama Ketua Jurusan <?= $kajur ?></h1>
+    <h2>ID User adalah {{ $id_user }}</h2>
+    <p>Email user saat ini adalah {{ $current_user->email }}</p>
+
     @include('layouts.frontend.partial.navigasi')
     <?php echo $nama_prodi ?>
     <p>Waktu saat ini : {{ time() }} </p>
