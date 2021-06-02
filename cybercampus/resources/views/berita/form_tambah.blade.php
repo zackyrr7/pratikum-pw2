@@ -25,7 +25,7 @@
                         </div>
                         <div class="form-group">
                             <label for="cover_img">Gambar Cover Berita</label>
-                            <input type="text" class="form-control" name="cover_img">
+                            <input type="file" class="form-control" name="cover_img">
                         </div>
                         <div class="form-group">
                             <label for="kategori_id">Kategori Berita</label>

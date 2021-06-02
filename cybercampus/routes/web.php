@@ -5,6 +5,7 @@ use App\Http\Controllers\LayananController;
 use App\Http\Controllers\SiteBackendController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\GalleryController;
 use App\Models\Layanan;
 
 use Illuminate\Support\Facades\Route;
@@ -90,6 +91,12 @@ Route::get('/admin/berita/formtambah', [BeritaController::class, 'formTambah'])-
 Route::post('/admin/berita/tambah/', [BeritaController::class, 'tambah'])->name('admin.berita.tambah')->middleware(['auth', 'permission:menambahkan-berita']);
 Route::get('/admin/berita/formubah/{id}', [BeritaController::class, 'formUbah'])->name('admin.berita.formubah')->middleware(['auth', 'permission:edit-berita']);
 Route::post('/admin/berita/ubah/{id}', [BeritaController::class, 'ubah'])->name('admin.berita.ubah')->middleware(['auth', 'permission:edit-berita']);
-Route::get('/admin/berita/hapus/{id}', [BeritaController::class, 'hapus'])->name('admin.berita.hapus')->middleware(['auth', 'permission:hapus-berita'])
+Route::get('/admin/berita/hapus/{id}', [BeritaController::class, 'hapus'])->name('admin.berita.hapus')->middleware(['auth', 'permission:hapus-berita']);
+
+
+//Gallery
+Route::get('/gallery/upload', [GalleryController::class, 'formUpload'])->name('gallery.upload');
+Route::post('/gallery/proses-upload', [GalleryController::class, 'prosesUpload'])->name('gallery.prosesUpload');
+Route::get('/gallery/view-gallery/{id}', [GalleryController::class, 'viewGallery'])->name('gallery.viewGallery');
 
 ?>
