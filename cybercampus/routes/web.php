@@ -6,8 +6,10 @@ use App\Http\Controllers\SiteBackendController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\GalleryController;
-use App\Models\Layanan;
-
+use App\Http\Controllers\Layanan;
+use App\Http\Controllers\KategoriUasController;
+use App\Http\Controllers\PenulisController;
+use App\Http\Controllers\BukuController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -99,4 +101,9 @@ Route::get('/gallery/upload', [GalleryController::class, 'formUpload'])->name('g
 Route::post('/gallery/proses-upload', [GalleryController::class, 'prosesUpload'])->name('gallery.prosesUpload');
 Route::get('/gallery/view-gallery/{id}', [GalleryController::class, 'viewGallery'])->name('gallery.viewGallery');
 
+
+//kategoriuas
+Route::get('/kategoriuas/index', [KategoriUasController::class, 'index'])->name('kategori.uas.index');
+Route::get('/kategoriuas/formtambah', [KategoriUasController::class, 'formTambah'])->name('kategori.uas.formTambah');
+Route::post('/kategoriuas/tambah', [KategoriUasController::class, 'tambah'])->name('kategori.uas.tambah');
 ?>

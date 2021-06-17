@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Buku;
 
-class Kategori extends Model
+class Penulis extends Model
 {
     use HasFactory;
 
-    protected $table = 'kategori';
+    protected $table = 'penulis';
 
     public function buku()
     {
